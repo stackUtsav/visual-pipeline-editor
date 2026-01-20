@@ -1,0 +1,35 @@
+/* BaseNode.css */
+
+.base-node {
+  width: 200px;
+  min-height: 80px;
+  background: rgb(242, 239, 231);
+  border: 1px solid rgb(0, 106, 113);
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgb(72, 166, 167)
+;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.base-node__header {
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgb(0, 106, 113);
+}
+
+.base-node__content {
+  font-size: 12px;
+}
+
+.react-flow__handle {
+  width: 10px;
+  height: 10px;
+  background: rgb(154, 203, 208);
+  border: 2px solid rgb(0, 106, 113);
+}

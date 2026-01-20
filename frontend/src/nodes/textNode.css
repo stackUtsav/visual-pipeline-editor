@@ -1,0 +1,15 @@
+.text-node-label {
+  display: block;
+  font-size: 12px;
+}
+
+.text-node-textarea {
+  width: 100%;
+  resize: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 2px 0;
+}
