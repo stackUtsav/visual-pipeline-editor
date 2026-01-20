@@ -2,7 +2,9 @@
 Visual node-based workflow editor built with React, featuring reusable node abstractions and FastAPI backend integration for workflow validation.
 
 #Visual Node-Based Workflow Editor
-Overview
+
+#Overview
+
 This project is a visual node-based workflow editor built using React for the frontend and FastAPI for backend validation.
 It allows users to construct workflows by connecting different types of nodes (Input, Text, LLM, Output) on a canvas and validates the structure of the workflow through a backend service.
 
@@ -13,7 +15,8 @@ The primary focus of this project is on:
 4. Frontend–backend integration
 5. Graph structure validation (DAG checking)
 
-Problem Statement
+#Problem Statement
+
 Visual workflow editors are widely used in modern systems such as data pipelines, AI orchestration tools, and automation platforms.
 
 The challenge is to design a system where:
@@ -24,7 +27,7 @@ The challenge is to design a system where:
 
 This project addresses these challenges by implementing a reusable node abstraction layer on the frontend and a backend service to analyze and validate workflow graphs.
 
-Features:
+#Features:
 
 Frontend
 1. Visual workflow canvas with draggable nodes.
@@ -50,7 +53,7 @@ Backend
 4. Validates whether the workflow forms a Directed Acyclic Graph (DAG).
 5. Returns structured JSON response for frontend consumption.
 
-Tech Stack:
+#Tech Stack:
 
 Frontend
 1. React (JavaScript)
@@ -69,3 +72,40 @@ Backend
 Communication
 1. REST API (JSON)
    - Used for frontend–backend data exchange.
+
+#Project Architecture
+
+project-root/
+│
+├── frontend/
+│   ├── src/
+│   │   ├── nodes/          # Node components (Input, Text, LLM, Output)
+│   │   ├── submit.js       # Sends workflow data to backend
+│   │   └── ...
+│   └── package.json
+│
+├── backend/
+│   ├── main.py             # FastAPI application
+│   └── ...
+│
+└── README.md
+
+#Frontend Implementation Details
+
+1. Node Abstraction
+   (i) A base node abstraction was created to:
+       (a) Share layout, styling, and handle logic.
+       (b) Allow rapid creation of new node types.
+       (c) Maintain consistency across all nodes.
+
+   (ii) Each node type extends this abstraction by providing:
+       (a) Custom content.
+       (b) Input/output handles.
+       (c) Node-specific behavior.
+
+2. Dynamic Text Node
+   (i) The Text Node includes advanced logic:
+       (a) Listens for text input changes.
+       (b) Automatically resizes the node to fit content.
+       (c) Uses pattern matching to detect variables inside {{ }} braces.
+       (d) Dynamically creates input handles for detected variables.
