@@ -75,7 +75,7 @@ Communication
 
 #Project Architecture
 
-
+![Execution Flow](assets/Screenshot%20(94).png) 
 
 #Frontend Implementation Details
 
