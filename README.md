@@ -58,9 +58,9 @@ Backend
 Frontend
 1. React (JavaScript)
    - Used for building the UI and managing application state.
-2. React Flow
+3. React Flow
    - Used for rendering the node-based canvas and managing connections.
-3. CSS
+4. CSS
    - Used for custom styling and layout.
 
 Backend
@@ -75,37 +75,36 @@ Communication
 
 #Project Architecture
 
-project-root/
-│
-├── frontend/
-│   ├── src/
-│   │   ├── nodes/          # Node components (Input, Text, LLM, Output)
-│   │   ├── submit.js       # Sends workflow data to backend
-│   │   └── ...
-│   └── package.json
-│
-├── backend/
-│   ├── main.py             # FastAPI application
-│   └── ...
-│
-└── README.md
+
 
 #Frontend Implementation Details
 
 1. Node Abstraction
+   
    (i) A base node abstraction was created to:
+   
        (a) Share layout, styling, and handle logic.
+   
        (b) Allow rapid creation of new node types.
+   
        (c) Maintain consistency across all nodes.
 
    (ii) Each node type extends this abstraction by providing:
+   
        (a) Custom content.
+   
        (b) Input/output handles.
+   
        (c) Node-specific behavior.
 
-2. Dynamic Text Node
+3. Dynamic Text Node
+   
    (i) The Text Node includes advanced logic:
+   
        (a) Listens for text input changes.
+   
        (b) Automatically resizes the node to fit content.
+   
        (c) Uses pattern matching to detect variables inside {{ }} braces.
+   
        (d) Dynamically creates input handles for detected variables.
