@@ -119,14 +119,18 @@ Communication
      "nodes": [{ "id": "A" }, { "id": "B" }],
    
      "edges": [{ "source": "A", "target": "B" }]
+   
    }
 
-2. It performs the following operations:
+3. It performs the following operations:
    (a) Counts total nodes.
+   
    (b) Counts total edges.
+   
    (c) Checks if the graph is a Directed Acyclic Graph (DAG).
 
-   Response Format
+   Response Format:
+   
    {
      "num_nodes": 2,
    
