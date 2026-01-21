@@ -111,38 +111,55 @@ Communication
 
 #Backend Implementation Details
 
-/pipelines/parse Endpoint
+1. /pipelines/parse Endpoint
 
-This endpoint accepts a JSON payload containing:
+   This endpoint accepts a JSON payload containing:
 
-{
-  "nodes": [{ "id": "A" }, { "id": "B" }],
-  "edges": [{ "source": "A", "target": "B" }]
-}
+   {
+     "nodes": [{ "id": "A" }, { "id": "B" }],
+   
+     "edges": [{ "source": "A", "target": "B" }]
+   }
 
-It performs the following operations:
+2. It performs the following operations:
+   (a) Counts total nodes.
+   (b) Counts total edges.
+   (c) Checks if the graph is a Directed Acyclic Graph (DAG).
 
-Counts total nodes
-
-Counts total edges
-
-Checks if the graph is a Directed Acyclic Graph (DAG)
-
-Response Format
-{
-  "num_nodes": 2,
-  "num_edges": 1,
-  "is_dag": true
-}
+   Response Format
+   {
+     "num_nodes": 2,
+   
+     "num_edges": 1,
+   
+     "is_dag": true
+   }
 
 #Frontend–Backend Integration
 
-1. The frontend collects the current workflow state (nodes and edges)
-
-2. On submission, the data is sent to the backend via a POST request
-
-3. The backend processes and validates the workflow structure
-
-4. The frontend receives the response and displays the results to the user
-
+1. The frontend collects the current workflow state (nodes and edges).
+2. On submission, the data is sent to the backend via a POST request.
+3. The backend processes and validates the workflow structure.
+4. The frontend receives the response and displays the results to the user.
 5. This integration ensures separation of concerns while maintaining a clean communication contract.
+
+#Key Learnings
+
+ 1. Designing reusable and scalable frontend component architectures.
+ 2. Managing dynamic UI behavior based on user input.
+ 3. Structuring JSON-based communication between frontend and backend.
+ 4. Implementing graph traversal logic for DAG validation.
+ 5. Building real-world workflow editor functionality similar to industry tools.
+
+#Future Improvements
+
+ 1. Execution of workflows beyond validation.
+ 2. Persistent storage of workflows.
+ 3. Improved error handling and validation feedback.
+ 4. Support for additional node types.
+ 5. Authentication and multi-user workflows.
+
+#Disclaimer
+
+This project was built as an assignment-style technical project for learning and demonstration purposes.
+It is not an official product and does not represent any proprietary system.
