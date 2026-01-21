@@ -108,3 +108,41 @@ Communication
        (c) Uses pattern matching to detect variables inside {{ }} braces.
    
        (d) Dynamically creates input handles for detected variables.
+
+#Backend Implementation Details
+
+/pipelines/parse Endpoint
+
+This endpoint accepts a JSON payload containing:
+
+{
+  "nodes": [{ "id": "A" }, { "id": "B" }],
+  "edges": [{ "source": "A", "target": "B" }]
+}
+
+It performs the following operations:
+
+Counts total nodes
+
+Counts total edges
+
+Checks if the graph is a Directed Acyclic Graph (DAG)
+
+Response Format
+{
+  "num_nodes": 2,
+  "num_edges": 1,
+  "is_dag": true
+}
+
+#Frontend–Backend Integration
+
+1. The frontend collects the current workflow state (nodes and edges)
+
+2. On submission, the data is sent to the backend via a POST request
+
+3. The backend processes and validates the workflow structure
+
+4. The frontend receives the response and displays the results to the user
+
+5. This integration ensures separation of concerns while maintaining a clean communication contract.
