@@ -109,6 +109,8 @@ Communication
    
        (d) Dynamically creates input handles for detected variables.
 
+![Execution Flow](assets/Screenshot%20(91).png)
+
 #Backend Implementation Details
 
 1. /pipelines/parse Endpoint
@@ -116,6 +118,7 @@ Communication
    This endpoint accepts a JSON payload containing:
 
    {
+   
      "nodes": [{ "id": "A" }, { "id": "B" }],
    
      "edges": [{ "source": "A", "target": "B" }]
@@ -123,6 +126,7 @@ Communication
    }
 
 3. It performs the following operations:
+   
    (a) Counts total nodes.
    
    (b) Counts total edges.
@@ -132,12 +136,16 @@ Communication
    Response Format:
    
    {
+   
      "num_nodes": 2,
    
      "num_edges": 1,
    
      "is_dag": true
+   
    }
+
+![Execution Flow](assets/Screenshot%20(84).png)   
 
 #Frontend–Backend Integration
 
